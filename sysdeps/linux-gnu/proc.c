@@ -8,7 +8,7 @@
 #include <string.h>
 #include <signal.h>
 #include <unistd.h>
-
+#include <linker.h>
 /* We use this macro to refer to ELF types independent of the native wordsize.
    `ElfW(TYPE)' is used in place of `Elf32_TYPE' or `Elf64_TYPE'.  */
 #define ElfW(type)	_ElfW (Elf, __ELF_NATIVE_CLASS, type)

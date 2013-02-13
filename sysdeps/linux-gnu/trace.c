@@ -130,10 +130,10 @@ continue_after_signal(pid_t pid, int signum) {
 #if defined __sparc__  || defined __ia64___ || defined __mips__
 		ptrace(PTRACE_SYSCALL, pid, 0, (void*)signum);
 #else
-		ptrace(PTRACE_SINGLESTEP, pid, 0, (void*)signum);
+		ptrace(PTRACE_SINGLESTEP, pid, 0, signum);
 #endif
 	} else {
-		ptrace(PTRACE_SYSCALL, pid, 0, (void*)signum);
+		ptrace(PTRACE_SYSCALL, pid, 0, signum);
 	}
 }
 
