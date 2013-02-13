@@ -30,8 +30,6 @@ my_demangle(const char *function_name) {
 		fn_copy = strdup(function_name);
 #ifdef HAVE_LIBIBERTY
 		tmp = cplus_demangle(function_name, DMGL_ANSI | DMGL_PARAMS);
-#elif defined HAVE_LIBSUPC__
-		tmp = __cxa_demangle(function_name, NULL, NULL, &status);
 #endif
 		if (!tmp)
 			tmp = fn_copy;
